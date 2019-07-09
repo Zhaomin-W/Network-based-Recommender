@@ -47,12 +47,12 @@ print ("AvgRating = ", amazonBooks[purchasedAsin]['AvgRating'])
 print ("DegreeCentrality = ", amazonBooks[purchasedAsin]['DegreeCentrality'])
 print ("ClusteringCoeff = ", amazonBooks[purchasedAsin]['ClusteringCoeff'])
 
-# (1) YOUR CODE HERE: 
+# (1) 
 #     Get the depth-1 ego network of purchasedAsin from copurchaseGraph,
 #     and assign the resulting graph to purchasedAsinEgoGraph.
 purchasedAsinEgoGraph = networkx.ego_graph(copurchaseGraph,purchasedAsin,radius=1)
 
-# (2) YOUR CODE HERE: 
+# (2)
 #     Use the island method on purchasedAsinEgoGraph to only retain edges with 
 #     threshold >= 0.5, and assign resulting graph to purchasedAsinEgoTrimGraph
 
@@ -69,7 +69,7 @@ for fnode, tnode, edge in purchasedAsinEgoGraph.edges(data=True):
             weightNodeDict[tnode]=edge['weight']
 
 
-# (3) YOUR CODE HERE: 
+# (3) Y
 #     Find the list of neighbors of the purchasedAsin in the 
 #     purchasedAsinEgoTrimGraph, and assign it to purchasedAsinNeighbors
 
@@ -79,12 +79,10 @@ purchasedAsinNeighbors = [asin for asin in purchasedAsinEgoTrimGraph.neighbors(p
 
 import numpy as np
 import pandas as pd
+
+# (4) 
 # ----------------------------------------------
 
- # (4) YOUR CODE HERE:
-# ----------------------------------------------
-
-# ----------------------
 
 SalesRank=[]
 TotalReviews=[]
@@ -138,7 +136,7 @@ dftrans['composite_score']=dftrans['DcCC_Score']+dftrans['R&R_Score']+(dftrans['
 print('--'*20)
 
 
-## STEP (5)
+## STEP (5) Final Recommendation Top Five
 
 
 compositemeasure={}
