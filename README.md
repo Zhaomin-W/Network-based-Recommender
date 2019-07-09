@@ -59,5 +59,5 @@ Then we proceed to narrow it further down to the most similar books. This is don
 Only the edges with threshold>= 0.5 are retained. And hence we obtain the trimmed graph which contains neighbors of the node with ASIN (0875421210).
 
 Finally, Top Five Recommendations are then taken based on the similarity measures that are associated with the neighbors in this trimmed graph. 
-In this example, The similarity metrics used is a composite measure.
+In this example, The similarity metrics used is a composite measure, the algorithm is explained in **Recommendation.py**.
 
